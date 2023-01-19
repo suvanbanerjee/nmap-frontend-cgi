@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "$(apt install lamp-server^ -y)"
+echo "$(apt install nmap -y)"
+echo "$(a2enmod cgi)"
+echo "$(systemctl restart apache2)"
+echo "$(chmod +x script.cgi)"
+echo "$(cd usr/lib && mkdir -p cgi-bin)"
+echo "$(cp script.cgi usr/lib/cgi-bin/)"
+echo "$IP=$(hostname -I)"
+echo "$(xdg-open http://$IP/cgi-bin/script.cgi)"
